@@ -12,5 +12,9 @@ namespace Projeto_empresa.Models
         public string nome { get; set; }
         public string endereco { get; set; }
         public string telefone { get; set; }
+        public string descricao { get; set; }
+        public string site { get; set; }
+        public string nomefilial { get; set; }
+        public string cnpj { get; set; }
     }
 }

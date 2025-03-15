@@ -22,8 +22,8 @@ namespace Projeto_empresa.DAOs
             {
                 connection.Open();
                 var query = @"
-                    INSERT INTO Filiais (Nome, Endereco, Telefone)
-                    VALUES (@Nome, @Endereco, @Telefone);
+                    INSERT INTO Filiais (Nome, Endereco, Telefone, Descricao, Site, NomeFilial, Cnpj)
+                    VALUES (@Nome, @Endereco, @Telefone, @Descricao, @Site, @NomeFilial, @Cnpj);
                 ";
 
                 using (var command = new MySqlCommand(query, connection))
@@ -31,6 +31,11 @@ namespace Projeto_empresa.DAOs
                     command.Parameters.AddWithValue("@Nome", filial.Nome);
                     command.Parameters.AddWithValue("@Endereco", filial.Endereco);
                     command.Parameters.AddWithValue("@Telefone", filial.Telefone);
+                    command.Parameters.AddWithValue("@Descricao", filial.Descricao);
+                    command.Parameters.AddWithValue("@Site", filial.Site);
+                    command.Parameters.AddWithValue("@NomeFilial", filial.NomeFilial);
+                    command.Parameters.AddWithValue("@Cnpj", filial.Cnpj);
+
                     command.ExecuteNonQuery();
                 }
             }
@@ -56,7 +61,40 @@ namespace Projeto_empresa.DAOs
                             Id = reader.GetInt32("Id"),
                             Nome = reader.GetString("Nome"),
                             Endereco = reader.GetString("Endereco"),
-                            Telefone = reader.GetString("Telefone")
+                            Telefone = reader.GetString("Telefone"),
+                            Descricao = reader.GetString("Descricao"),
+                            Site = reader.GetString("Site"),
+                            NomeFilial = reader.GetString("NomeFilial"),
+                            Cnpj = reader.GetString("Cnpj")
+
+                        });
+                    }
+                }
+            }
+
+            return filiais;
+        }
+    
+
+    // Método para recuperar apenas Id e Nome das filiais (para o ComboBox)
+        public List<FilialDTO> GetAllParaComboBox()
+        {
+            var filiais = new List<FilialDTO>();
+
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                connection.Open();
+                var query = "SELECT Id, NomeFilial FROM Filiais"; // Apenas Id e Nome
+
+                using (var command = new MySqlCommand(query, connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        filiais.Add(new FilialDTO
+                        {
+                            Id = reader.GetInt32("Id"),
+                            NomeFilial = reader.GetString("NomeFilial")
                         });
                     }
                 }

@@ -12,5 +12,11 @@ namespace Projeto_empresa.DTOs
         public string Nome { get; set; }
         public string Endereco { get; set; }
         public string Telefone { get; set; }
+       public string Descricao { get; set; }
+       public string Site { get; set; }
+       public string NomeFilial { get; set;}
+       public string Cnpj { get; set;}
+        
+
     }
 }

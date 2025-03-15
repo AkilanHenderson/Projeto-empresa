@@ -30,5 +30,12 @@ namespace Projeto_empresa.Controllers
         {
             return _filialDAO.GetAll();
         }
+
+        // Método para listar apenas Id e Nome das filiais (para o ComboBox)
+        public List<FilialDTO> ListarFiliaisParaComboBox()
+        {
+            return _filialDAO.GetAllParaComboBox();
+        }
+
     }
 }
