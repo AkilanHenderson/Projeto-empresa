@@ -138,11 +138,23 @@
     <Compile Include="Views\CadastroFuncionario.Designer.cs">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FilialAtualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FilialAtualizar.Designer.cs">
+      <DependentUpon>FilialAtualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Filialforms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Filialforms.Designer.cs">
       <DependentUpon>Filialforms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuncionarioAtualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuncionarioAtualizar.Designer.cs">
+      <DependentUpon>FuncionarioAtualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Funcionarioforms.cs">
       <SubType>Form</SubType>
@@ -189,8 +201,14 @@
     <EmbeddedResource Include="Views\CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FilialAtualizar.resx">
+      <DependentUpon>FilialAtualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Filialforms.resx">
       <DependentUpon>Filialforms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuncionarioAtualizar.resx">
+      <DependentUpon>FuncionarioAtualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Funcionarioforms.resx">
       <DependentUpon>Funcionarioforms.cs</DependentUpon>

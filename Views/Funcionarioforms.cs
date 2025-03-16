@@ -1,9 +1,11 @@
 ﻿using Projeto_empresa.Controllers;
+using Projeto_empresa.DAOs;
 using Projeto_empresa.DTOs;
 using Projeto_empresa.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -16,10 +18,22 @@ namespace Projeto_empresa.Views
     public partial class Funcionarioforms : Form
     {
         private FuncionarioController _funcionarioController;
-
+        private FuncionarioDTO _funcionario;
         public Funcionarioforms(FuncionarioDTO funcionario)
         {
             InitializeComponent();
+
+            // Obtém a string de conexão do App.config
+            string connectionString = ConfigurationManager.ConnectionStrings["Empresa"].ConnectionString;
+
+            // Instancia o DAO com a string de conexão
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO(connectionString);
+
+            // Instancia o controlador com o DAO
+            _funcionarioController = new FuncionarioController(funcionarioDAO);
+
+            // Armazena o funcionário atual
+            _funcionario = funcionario;
 
             // Exibe os dados do funcionário nos TextBoxes
             txtId.Text = funcionario.Id.ToString(); // Adiciona o ID ao campo oculto
@@ -29,7 +43,17 @@ namespace Projeto_empresa.Views
             txtEmail.Text = funcionario.Email;
             txtSenha.Text = funcionario.Senha;
             txtIdade.Text = funcionario.Idade.ToString();
-            txtFilial.Text = funcionario.NomeFilial; 
+            txtFilial.Text = funcionario.NomeFilial;
+
+            // Desabilita a edição dos TextBoxes
+            txtId.ReadOnly = true;
+            txtNome.ReadOnly = true;
+            txtCpf.ReadOnly = true;
+            txtTelefone.ReadOnly = true;
+            txtEmail.ReadOnly = true;
+            txtSenha.ReadOnly = true;
+            txtIdade.ReadOnly = true;
+            txtFilial.ReadOnly = true;
         }
         
         private void Funcionarioforms_Load(object sender, EventArgs e)
@@ -45,30 +69,28 @@ namespace Projeto_empresa.Views
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                // Cria um novo FuncionarioDTO com os dados atualizados
-                FuncionarioDTO funcionario = new FuncionarioDTO
-                {
-                    Id = int.Parse(txtId.Text), // Supondo que você tenha um campo oculto para o ID
-                    Nome = txtNome.Text,
-                    Cpf = txtCpf.Text,
-                    Telefone = txtTelefone.Text,
-                    Email = txtEmail.Text,
-                    Idade = int.Parse(txtIdade.Text),
-                    Senha = txtSenha.Text,
-                    FilialId = int.Parse(txtFilial.Text)
-                };
+            // Abre o formulário de atualização, passando os dados atuais
+            FuncionarioAtualizar funcionarioatualizar = new FuncionarioAtualizar(_funcionario);
+            
+            DialogResult result = funcionarioatualizar.ShowDialog(); // Abre o formulário de atualização como uma janela modal
+            // Atualiza os dados no formulário principal após a edição
 
-                // Atualiza os dados do funcionário
-                _funcionarioController.AtualizarFuncionario(funcionario);
-                MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show($"Erro ao atualizar dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _funcionario = funcionarioatualizar.FuncionarioAtualizado;
+                txtNome.Text = _funcionario.Nome;
+                txtCpf.Text = _funcionario.Cpf;
+                txtTelefone.Text = _funcionario.Telefone;
+                txtEmail.Text = _funcionario.Email;
+                txtSenha.Text = _funcionario.Senha;
+                txtIdade.Text = _funcionario.Idade.ToString();
+                txtFilial.Text = _funcionario.NomeFilial;
             }
-
+            else if (result == DialogResult.Cancel)
+            {
+                // Se o usuário cancelar, não faz nada (ou pode exibir uma mensagem)
+                MessageBox.Show("Atualização cancelada.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -103,8 +125,7 @@ namespace Projeto_empresa.Views
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            
             this.Close();
         }
     }

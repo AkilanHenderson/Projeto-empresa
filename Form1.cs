@@ -66,20 +66,15 @@ namespace Projeto_empresa
             // Verifica se o formulário de login já está aberto
             if (Application.OpenForms.OfType<Loginform>().Count() == 0)
             {
-                // Cria uma nova instância do formulário de login
                 Loginform login = new Loginform();
-                login.MdiParent = this; // Define o formulário principal como MDI Parent
-                login.Show(); // Exibe o formulário de login
-                login.BringToFront(); // Traz o formulário para a frente
-                login.Activate(); // Ativa o formulário para garantir que ele receba foco
+                login.MdiParent = this;
+                // Abre o formulário de login
+                login.Show(); 
             }
             else
             {
-                // Se o formulário já estiver aberto, traz ele para a frente
-                var loginForm = Application.OpenForms.OfType<Loginform>().First();
-                loginForm.WindowState = FormWindowState.Normal; // Restaura o estado da janela (se estiver minimizada)
-                loginForm.BringToFront(); // Traz o formulário para a frente
-                loginForm.Activate(); // Ativa o formulário
+                Application.OpenForms.OfType<Loginform>().First().WindowState = FormWindowState.Normal;
+                Application.OpenForms.OfType<Loginform>().First().BringToFront();
             }
         }
 
@@ -92,15 +87,12 @@ namespace Projeto_empresa
                 cadastro.MdiParent = this;
                 // Abre o formulário de login
                 cadastro.Show();
-                cadastro.BringToFront(); 
-                cadastro.Activate();
+                
             }
             else
             {
-                var cadastroform = Application.OpenForms.OfType<Cadastroform>().First();
-                cadastroform.WindowState = FormWindowState.Normal; // Restaura o estado da janela (se estiver minimizada)
-                cadastroform.BringToFront(); // Traz o formulário para a frente
-                cadastroform.Activate(); // Ativa o formulário
+                Application.OpenForms.OfType<Cadastroform>().First().WindowState = FormWindowState.Normal;
+                Application.OpenForms.OfType<Cadastroform>().First().BringToFront();
             }
         }
     }

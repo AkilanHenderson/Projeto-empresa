@@ -163,6 +163,48 @@ namespace Projeto_empresa.DAOs
             }
         }
 
+        // Método para recuperar todos os funcionários de uma filial específica
+        public List<FuncionarioDTO> GetFuncionariosPorFilial(int filialId)
+        {
+            var funcionarios = new List<FuncionarioDTO>();
+
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                connection.Open();
+                var query = @"
+            SELECT f.*, fi.NomeFilial
+            FROM Funcionarios f
+            INNER JOIN Filiais fi ON f.FilialId = fi.Id
+            WHERE f.FilialId = @FilialId"; // Filtra por FilialId
+
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@FilialId", filialId); // Passa o ID da filial como parâmetro
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            funcionarios.Add(new FuncionarioDTO
+                            {
+                                Id = reader.GetInt32("Id"),
+                                Nome = reader.GetString("Nome"),
+                                Cpf = reader.GetString("Cpf"),
+                                Telefone = reader.GetString("Telefone"),
+                                Email = reader.GetString("Email"),
+                                Idade = reader.GetInt32("Idade"),
+                                Senha = reader.GetString("Senha"),
+                                FilialId = reader.GetInt32("FilialId"),
+                                NomeFilial = reader.GetString("NomeFilial") // Nome da filial (opcional)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return funcionarios;
+        }
+
         //metodo para deletar o funcionario
         public void DeletarFuncionario(int id)
         {

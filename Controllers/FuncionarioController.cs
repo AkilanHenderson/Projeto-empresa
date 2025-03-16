@@ -49,6 +49,12 @@ namespace Projeto_empresa.Controllers
             _funcionarioDAO.AtualizarFuncionario(funcionario);
         }
 
+        // Método para listar funcionários de uma filial específica
+        public List<FuncionarioDTO> ListarFuncionariosPorFilial(int filialId)
+        {
+            return _funcionarioDAO.GetFuncionariosPorFilial(filialId);
+        }
+
         //metodo para deletar o funcionario
         public void DeletarFuncionario(int id)
         {
