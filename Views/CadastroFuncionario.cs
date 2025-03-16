@@ -71,6 +71,7 @@ namespace Projeto_empresa.Views
                     Cpf = txtCpf.Text,
                     Telefone = txtTelefone.Text,
                     Email = txtEmail.Text,
+                    Senha = txtSenha.Text,
                     Idade = int.Parse(txtIdade.Text),
                     FilialId = int.Parse(cmbFilial.SelectedValue.ToString()) // ComboBox de Filiais
                 };
@@ -81,8 +82,7 @@ namespace Projeto_empresa.Views
 
                 LimparCampos();
 
-                Form1 form1 = new Form1();
-                form1.Show();
+               
                 this.Hide();
             }
 
@@ -97,14 +97,13 @@ namespace Projeto_empresa.Views
             txtCpf.Clear();
             txtTelefone.Clear();
             txtEmail.Clear();
+            txtSenha.Clear();
             txtIdade.Clear();
             cmbFilial.SelectedIndex = 0; // Volta para a primeira opção do ComboBox
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Cadastroform cadastro = new Cadastroform();
-            cadastro.Show();
             this.Hide();
         }
     }

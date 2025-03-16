@@ -42,6 +42,8 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@
             // cmbFilial
             // 
             this.cmbFilial.FormattingEnabled = true;
-            this.cmbFilial.Location = new System.Drawing.Point(277, 291);
+            this.cmbFilial.Location = new System.Drawing.Point(277, 314);
             this.cmbFilial.Name = "cmbFilial";
             this.cmbFilial.Size = new System.Drawing.Size(121, 21);
             this.cmbFilial.TabIndex = 3;
@@ -117,7 +119,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 294);
+            this.label6.Location = new System.Drawing.Point(134, 317);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 8;
@@ -161,11 +163,29 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(136, 286);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(277, 283);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(143, 20);
+            this.txtSenha.TabIndex = 15;
+            // 
             // CadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtCpf);
@@ -204,5 +224,7 @@
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSenha;
     }
 }

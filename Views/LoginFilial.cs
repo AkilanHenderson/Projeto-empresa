@@ -80,8 +80,7 @@ namespace Projeto_empresa.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Loginform login = new Loginform();
-            login.Show();
+          
             this.Hide();
         }
     }

@@ -27,6 +27,7 @@ namespace Projeto_empresa.Views
             txtCpf.Text = funcionario.Cpf;
             txtTelefone.Text = funcionario.Telefone;
             txtEmail.Text = funcionario.Email;
+            txtSenha.Text = funcionario.Senha;
             txtIdade.Text = funcionario.Idade.ToString();
             txtFilial.Text = funcionario.NomeFilial; 
         }

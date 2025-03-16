@@ -40,6 +40,8 @@ namespace Projeto_empresa.Views
                     Nome = txtNome.Text,
                     Endereco = txtEndereco.Text,
                     Telefone = txtTelefone.Text,
+                    Email = txtEmail.Text,
+                    Senha = txtSenha.Text,
                     Descricao = txtDescricao.Text,
                     Site = txtSite.Text,
                     NomeFilial = txtNomeFilial.Text,
@@ -50,6 +52,8 @@ namespace Projeto_empresa.Views
                 if (string.IsNullOrWhiteSpace(novaFilial.Nome) ||
                     string.IsNullOrWhiteSpace(novaFilial.Endereco) ||
                     string.IsNullOrWhiteSpace(novaFilial.Telefone) ||
+                    string.IsNullOrWhiteSpace(novaFilial.Email) ||
+                    string.IsNullOrWhiteSpace(novaFilial.Senha) ||
                     string.IsNullOrWhiteSpace(novaFilial.NomeFilial)||
                     string.IsNullOrWhiteSpace(novaFilial.Cnpj))
                 {
@@ -61,6 +65,8 @@ namespace Projeto_empresa.Views
                 txtNome.Clear();
                 txtEndereco.Clear();
                 txtTelefone.Clear();
+                txtEmail.Clear();
+                txtSenha.Clear();
                 txtDescricao.Clear();
                 txtSite.Clear();
                 txtNomeFilial.Clear();
@@ -69,8 +75,6 @@ namespace Projeto_empresa.Views
                 _filialController.CadastrarFilial(novaFilial);
                 MessageBox.Show("Filial cadastrada com sucesso!", "Sucesso, faça o login na tela inicial", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Form1 form1 = new Form1();
-                form1.Show();
                 this.Hide();
 
             }
@@ -82,8 +86,7 @@ namespace Projeto_empresa.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Cadastroform cadastro = new Cadastroform();
-            cadastro.Show();
+            
             this.Hide();
         }
     }
