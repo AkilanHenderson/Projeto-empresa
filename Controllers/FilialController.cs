@@ -37,5 +37,28 @@ namespace Projeto_empresa.Controllers
             return _filialDAO.GetAllParaComboBox();
         }
 
+        // Método para validar o login
+        public bool ValidarLogin(string email, string senha)
+        {
+            return _filialDAO.ValidarLogin(email, senha);
+        }
+
+        // Método para buscar um funcionário por e-mail
+        public FilialDTO BuscarFilialPorEmail(string email)
+        {
+            return _filialDAO.BuscarFilialPorEmail(email);
+        }
+
+        //metodo para atualizar filial
+        public void AtualizarFilial(FilialDTO filial)
+        {
+            _filialDAO.AtualizarFilial(filial);
+        }
+
+        //metodo para deletar a filial
+        public void DeletarFilial(int id)
+        {
+            _filialDAO.DeletarFilial(id);
+        }
     }
 }

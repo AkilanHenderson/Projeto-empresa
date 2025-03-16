@@ -15,6 +15,7 @@ namespace Projeto_empresa.Models
         public string email { get; set; }
         public int FilialId { get; set; }
         public int idade {  get; set; }
-
+        public string senha { get; set; }
+        public string nomeFilial { get; set; }
     }
 }

@@ -138,11 +138,35 @@
     <Compile Include="Views\CadastroFuncionario.Designer.cs">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Filialforms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Filialforms.Designer.cs">
+      <DependentUpon>Filialforms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionarioforms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionarioforms.Designer.cs">
+      <DependentUpon>Funcionarioforms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginFilial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginFilial.Designer.cs">
+      <DependentUpon>LoginFilial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Loginform.Designer.cs">
       <DependentUpon>Loginform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginFuncionario.Designer.cs">
+      <DependentUpon>LoginFuncionario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -165,8 +189,20 @@
     <EmbeddedResource Include="Views\CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Filialforms.resx">
+      <DependentUpon>Filialforms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionarioforms.resx">
+      <DependentUpon>Funcionarioforms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginFilial.resx">
+      <DependentUpon>LoginFilial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginFuncionario.resx">
+      <DependentUpon>LoginFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

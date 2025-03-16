@@ -43,11 +43,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Cadastrar
             // 
-            this.Cadastrar.Location = new System.Drawing.Point(254, 349);
+            this.Cadastrar.Location = new System.Drawing.Point(163, 410);
             this.Cadastrar.Name = "Cadastrar";
             this.Cadastrar.Size = new System.Drawing.Size(75, 23);
             this.Cadastrar.TabIndex = 0;
@@ -92,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(160, 286);
+            this.label4.Location = new System.Drawing.Point(160, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 5;
@@ -101,7 +106,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(153, 244);
+            this.label5.Location = new System.Drawing.Point(153, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 6;
@@ -123,14 +128,14 @@
             // 
             // txtSite
             // 
-            this.txtSite.Location = new System.Drawing.Point(274, 241);
+            this.txtSite.Location = new System.Drawing.Point(274, 297);
             this.txtSite.Name = "txtSite";
             this.txtSite.Size = new System.Drawing.Size(155, 20);
             this.txtSite.TabIndex = 9;
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(274, 286);
+            this.txtDescricao.Location = new System.Drawing.Point(274, 342);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(155, 20);
             this.txtDescricao.TabIndex = 10;
@@ -167,11 +172,58 @@
             this.txtNome.Size = new System.Drawing.Size(155, 20);
             this.txtNome.TabIndex = 14;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(333, 410);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(160, 228);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(158, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Senha";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(274, 228);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(155, 20);
+            this.txtEmail.TabIndex = 18;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(274, 263);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(155, 20);
+            this.txtSenha.TabIndex = 19;
+            // 
             // CadastrarFilial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.label7);
@@ -212,5 +264,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSenha;
     }
 }

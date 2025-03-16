@@ -97,6 +97,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Cadastroform";
             this.Text = "Cadastroform";
+            this.Load += new System.EventHandler(this.Cadastroform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

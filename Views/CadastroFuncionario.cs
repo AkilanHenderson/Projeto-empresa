@@ -71,16 +71,19 @@ namespace Projeto_empresa.Views
                     Cpf = txtCpf.Text,
                     Telefone = txtTelefone.Text,
                     Email = txtEmail.Text,
+                    Senha = txtSenha.Text,
                     Idade = int.Parse(txtIdade.Text),
                     FilialId = int.Parse(cmbFilial.SelectedValue.ToString()) // ComboBox de Filiais
                 };
 
                 _funcionarioController.CadastrarFuncionario(funcionario);
 
-                MessageBox.Show("Funcionário cadastrado com sucesso!");
+                MessageBox.Show("Funcionário cadastrado com sucesso!, faça o login na tela inicial ");
 
                 LimparCampos();
 
+               
+                this.Hide();
             }
 
             catch (Exception ex)
@@ -94,10 +97,15 @@ namespace Projeto_empresa.Views
             txtCpf.Clear();
             txtTelefone.Clear();
             txtEmail.Clear();
+            txtSenha.Clear();
             txtIdade.Clear();
             cmbFilial.SelectedIndex = 0; // Volta para a primeira opção do ComboBox
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
    }
 
