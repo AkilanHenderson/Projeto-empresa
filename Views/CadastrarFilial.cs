@@ -57,9 +57,6 @@ namespace Projeto_empresa.Views
                     return;
                 }
 
-                _filialController.CadastrarFilial(novaFilial);
-                MessageBox.Show("Filial cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
                 // Limpa os campos
                 txtNome.Clear();
                 txtEndereco.Clear();
@@ -68,11 +65,26 @@ namespace Projeto_empresa.Views
                 txtSite.Clear();
                 txtNomeFilial.Clear();
                 txtCnpj.Clear();
+
+                _filialController.CadastrarFilial(novaFilial);
+                MessageBox.Show("Filial cadastrada com sucesso!", "Sucesso, faça o login na tela inicial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao cadastrar filial: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Cadastroform cadastro = new Cadastroform();
+            cadastro.Show();
+            this.Hide();
         }
     }
  }

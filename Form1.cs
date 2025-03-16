@@ -40,22 +40,10 @@ namespace Projeto_empresa
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Cria uma instância do formulário de login
-            Loginform login = new Loginform();
-
-            // Abre o formulário de login
-            login.Show();
-
-            // Opcional: Fechar ou ocultar o formulário atual
-            this.Hide(); // Oculta o formulário atual
-                         // this.Close(); // Fecha o formulário atual (use com cuidado)
-        }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
-            // Cria uma instância do formulário de login
+            // Cria uma instância do formulário de ca
             Cadastroform cadastro = new Cadastroform();
 
             // Abre o formulário de login
@@ -64,6 +52,49 @@ namespace Projeto_empresa
             // Opcional: Fechar ou ocultar o formulário atual
             this.Hide(); // Oculta o formulário atual
                          // this.Close(); // Fecha o formulário atual (use com cuidado)
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+         
+        private void escolhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Loginform>().Count() == 0)
+            {
+                Loginform login = new Loginform();
+                login.MdiParent = this;
+                // Abre o formulário de login
+                login.Show();
+            }
+            else
+            {
+                Application.OpenForms.OfType<Loginform>().First().WindowState = FormWindowState.Normal;
+                Application.OpenForms.OfType<Loginform>().First().BringToFront();
+            }
+        }
+
+        private void cadastroToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Cadastroform>().Count() == 0)
+            {
+                // Cria uma instância do formulário de cadastro
+                Cadastroform cadastro = new Cadastroform();
+                cadastro.MdiParent = this;
+                // Abre o formulário de login
+                cadastro.Show();
+            }
+            else
+            {
+                Application.OpenForms.OfType<Cadastroform>().First().WindowState = FormWindowState.Normal;
+                Application.OpenForms.OfType<Cadastroform>().First().BringToFront();
+            }
         }
     }
 }

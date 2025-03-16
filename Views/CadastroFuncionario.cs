@@ -77,10 +77,13 @@ namespace Projeto_empresa.Views
 
                 _funcionarioController.CadastrarFuncionario(funcionario);
 
-                MessageBox.Show("Funcionário cadastrado com sucesso!");
+                MessageBox.Show("Funcionário cadastrado com sucesso!, faça o login na tela inicial ");
 
                 LimparCampos();
 
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
             }
 
             catch (Exception ex)
@@ -98,6 +101,12 @@ namespace Projeto_empresa.Views
             cmbFilial.SelectedIndex = 0; // Volta para a primeira opção do ComboBox
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Cadastroform cadastro = new Cadastroform();
+            cadastro.Show();
+            this.Hide();
+        }
     }
    }
 

@@ -42,5 +42,10 @@ namespace Projeto_empresa.Views
             this.Hide(); // Oculta o formulário atual
                          // this.Close(); // Fecha o formulário atual (use com cuidado)
         }
+
+        private void Cadastroform_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

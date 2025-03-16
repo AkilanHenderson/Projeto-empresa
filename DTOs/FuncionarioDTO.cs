@@ -13,8 +13,10 @@ namespace Projeto_empresa.DTOs
         public string Cpf { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public string Senha { get; set; }
         public int Idade {  get; set; }
         public int FilialId { get; set; }
+        public string NomeFilial { get; set; }
 
     }
 }

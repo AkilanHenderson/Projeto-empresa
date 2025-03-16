@@ -43,11 +43,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Cadastrar
             // 
-            this.Cadastrar.Location = new System.Drawing.Point(254, 349);
+            this.Cadastrar.Location = new System.Drawing.Point(163, 354);
             this.Cadastrar.Name = "Cadastrar";
             this.Cadastrar.Size = new System.Drawing.Size(75, 23);
             this.Cadastrar.TabIndex = 0;
@@ -167,11 +168,22 @@
             this.txtNome.Size = new System.Drawing.Size(155, 20);
             this.txtNome.TabIndex = 14;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(333, 354);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // CadastrarFilial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtCnpj);
             this.Controls.Add(this.label7);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

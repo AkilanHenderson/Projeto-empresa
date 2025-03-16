@@ -24,11 +24,18 @@ namespace Projeto_empresa.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LoginFuncionario login = new LoginFuncionario();
+            login.Show();
+            
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LoginFilial login = new LoginFilial();
+            login.Show();
+            
+
 
         }
     }

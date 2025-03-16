@@ -30,5 +30,29 @@ namespace Projeto_empresa.Controllers
         {
             return _funcionarioDAO.GetAll();
         }
+
+        // Método para validar o login
+        public bool ValidarLogin(string email, string senha)
+        {
+            return _funcionarioDAO.ValidarLogin(email, senha);
+        }
+
+        // Método para buscar um funcionário por e-mail
+        public FuncionarioDTO BuscarFuncionarioPorEmail(string email)
+        {
+            return _funcionarioDAO.BuscarFuncionarioPorEmail(email);
+        }
+
+        //meotodo para atulizar o funcionario
+        public void AtualizarFuncionario(FuncionarioDTO funcionario)
+        {
+            _funcionarioDAO.AtualizarFuncionario(funcionario);
+        }
+
+        //metodo para deletar o funcionario
+        public void DeletarFuncionario(int id)
+        {
+            _funcionarioDAO.DeletarFuncionario(id);
+        }
     }
 }

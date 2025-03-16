@@ -16,5 +16,7 @@ namespace Projeto_empresa.Models
         public string site { get; set; }
         public string nomefilial { get; set; }
         public string cnpj { get; set; }
+        public string Senha { get; set; }
+        public string Email { get; set; }
     }
 }
